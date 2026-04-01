@@ -9,17 +9,18 @@
 
 
 .home-section {
-    display: flex;
+     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100dvh;
     width: 100%;
-    background-image: url('/src/assets/cristian.jpg');
+    /* background-image: url('/src/assets/cristian.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    background-color: coral;
 }
 .about-section {
     display: flex;
