@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import '../styles/sections.css'
-
+import profileImage from '../assets/profile.jpg'
 const aboutLines = [
   'I am an experienced software engineer with a robust background in programming, boasting a proven track record of successfully developing a diverse range of applications.',
   'Throughout my career, I have made significant contributions to numerous projects, both collaboratively and independently.',
@@ -19,41 +19,61 @@ const aboutLines = [
 
 const AboutSection = () => {
   return (
-    <motion.div
-      className="about-section"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.35 }}
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.18,
+    <div className="about-page">
+      <div className="about-page__aside_image">
+        <img
+          src={profileImage}
+          alt="Profile"
+          style={{
+            width: '220px',
+            height: '220px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+            boxShadow: '0 4px 30px rgba(0, 0, 0, 0.18)',
+            objectPosition: 'top center',
+          }}
+        />
+        <h2 style={{ marginTop: '28px', fontSize: '2rem', textAlign: 'center' }}>Cristian Nass</h2>
+      </div>
+      <motion.div
+        className="about-section-copy about-page__aside_text"
+        style={{
+          textAlign: 'left',
+        }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.35 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.18,
+            },
           },
-        },
-      }}
-    >
-      {aboutLines.map((line, index) =>
-        line ? (
-          <motion.p
-            key={`${line.slice(0, 20)}-${index}`}
-            variants={{
-              hidden: { opacity: 0, y: 14 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.45, ease: 'easeOut' },
-              },
-            }}
-            style={{ margin: 0 }}
-          >
-            {line}
-          </motion.p>
-        ) : (
-          <div key={`spacer-${index}`} style={{ height: '1rem' }} />
-        )
-      )}
-    </motion.div>
+        }}
+      >
+        {aboutLines.map((line, index) =>
+          line ? (
+            <motion.p
+              key={`${line.slice(0, 20)}-${index}`}
+              variants={{
+                hidden: { opacity: 0, y: 14 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.45, ease: 'easeOut' },
+                },
+              }}
+              style={{ margin: 0, textAlign: "left" }}
+            >
+              {line}
+            </motion.p>
+          ) : (
+            <div key={`spacer-${index}`} style={{ height: '1rem' }} />
+          )
+        )}
+      </motion.div>
+    </div>
   )
 }
 
