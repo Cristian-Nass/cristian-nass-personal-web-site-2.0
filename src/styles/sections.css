@@ -21,6 +21,12 @@
     background-repeat: no-repeat;
     background-attachment: fixed; */
     background-color: coral;
+
+
+    background-color: #ff7f50;
+opacity: 1;
+background-image:  linear-gradient(#f68a62 1.5px, transparent 1.5px), linear-gradient(to right, #f68a62 1.5px, #ff7f50 1.5px);
+background-size: 30px 30px;
 }
 .about-section {
     display: flex;
